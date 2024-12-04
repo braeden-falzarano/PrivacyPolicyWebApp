@@ -1,0 +1,11 @@
+{
+  "hash": "ba25da6b313197fc1ba15cbee390582e",
+  "result": {
+    "markdown": "---\ntitle: \"My Quarto Website\"\nauthor: \"Braeden\"\noutput: html_document\nexecute:\n  engine: python\n  package: reticulate\n---\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n```{html}\n# Text Readability Analysis\n\n<p>Enter text to analyze its readability score:</p>\n<input type=\"text\" id=\"inputText\" placeholder=\"Enter text here\" />\n<button onclick=\"analyzeText()\">Analyze</button>\n\n<p id=\"result\"></p>\n\n<script>\nasync function analyzeText() {\n    const text = document.getElementById('inputText').value;\n    const response = await fetch('http://127.0.0.1:5000/analyze', {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'application/json'\n        },\n        body: JSON.stringify({ text })\n    });\n    const data = await response.json();\n    document.getElementById('result').innerText = 'Readability Score: ' + data.readability_score;\n}\n</script>\n```\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
