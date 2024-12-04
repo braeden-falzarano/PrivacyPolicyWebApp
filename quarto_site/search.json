@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Quarto Website",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n# Text Readability Analysis\n\n&lt;p&gt;Enter text to analyze its readability score:&lt;/p&gt;\n&lt;input type=\"text\" id=\"inputText\" placeholder=\"Enter text here\" /&gt;\n&lt;button onclick=\"analyzeText()\"&gt;Analyze&lt;/button&gt;\n\n&lt;p id=\"result\"&gt;&lt;/p&gt;\n\n&lt;script&gt;\nasync function analyzeText() {\n    const text = document.getElementById('inputText').value;\n    const response = await fetch('http://127.0.0.1:5000/analyze', {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'application/json'\n        },\n        body: JSON.stringify({ text })\n    });\n    const data = await response.json();\n    document.getElementById('result').innerText = 'Readability Score: ' + data.readability_score;\n}\n&lt;/script&gt;"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n2"
+  }
+]
