@@ -9,14 +9,10 @@ from openai import OpenAI
 import io
 import logging
 
-
+# Set up OpenAI API
 app = Flask(__name__)
 nlp = spacy.load("en_core_web_sm")
 client = OpenAI(api_key="yourAPIkey", organization="yourOrg")
-
-# Set up OpenAI API
-client = OpenAI(api_key = "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",
-                organization = "org-QbO8OXINh9kM6Y6kYQ4T3iME")
 
 # Define relevant entities and their explanations
 # Updated list of relevant entities
